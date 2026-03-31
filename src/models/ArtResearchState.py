@@ -1,7 +1,7 @@
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel
 
-from models.ArtistInfo import ArtistInfo
+from src.models.ArtistInfo import ArtistInfo
 
 class ArtResearchState(BaseModel):
     query: str

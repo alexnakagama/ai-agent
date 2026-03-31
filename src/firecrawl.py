@@ -14,8 +14,8 @@ class FirecrawlService:
 
     def search_companies(self, query: str, num_results: int):
         try:
-            result = self.app.search (
-                query=f"{query} company pricing",
+            result = self.app.search(
+                query=query,
                 limit=num_results,
                 scrape_options=V1ScrapeOptions(
                     formats=["markdown"]
@@ -24,7 +24,7 @@ class FirecrawlService:
             return result
         except Exception as e:
             print(e)
-            return []
+            return None
         
     def scrape_company_pages(self, url: str):
         try:
@@ -35,4 +35,4 @@ class FirecrawlService:
             return result
         except Exception as e:
             print(e)
-            return []
+            return None
